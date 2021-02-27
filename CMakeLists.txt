@@ -14,6 +14,7 @@ include_directories(
 link_directories(${CMAKE_BINARY_DIR}/openmind-prefix/src/openmind-build/omnn/math)
 
 add_executable(NonLinearSystem NonLinearSystem.cpp)
+add_dependencies(NonLinearSystem openmind)
 
 target_link_libraries(NonLinearSystem
 	math
