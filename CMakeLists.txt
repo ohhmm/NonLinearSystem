@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 2.8.12)
 
 project (NonLinearSystem)
 
@@ -15,5 +15,5 @@ include_directories(
 link_directories(${CMAKE_BINARY_DIR}/openmind-prefix/src/openmind-build/omnn/math)
 
 add_executable(NonLinearSystem NonLinearSystem.cpp)
-target_link_libraries(NonLinearSystem math)
 add_dependencies(NonLinearSystem openmind)
+target_link_libraries(NonLinearSystem math leveldb pthread boost_serialization)
