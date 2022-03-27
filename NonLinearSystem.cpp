@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#include <openmind/omnn/math/System.h>
+// TODO : #include <openmind/omnn/math/System.h>
+#include <omnn/math/System.h>
 using namespace omnn::math;
 
 int main(int argc, char **argv) {

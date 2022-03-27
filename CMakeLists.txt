@@ -1,19 +1,19 @@
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.6)
 
 project (NonLinearSystem)
 
-include(ExternalProject)
-ExternalProject_Add(openmind 
+enable_language(CXX)
+set (CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+option(OPENMIND_MATH_USE_LEVELDB_CACHE "Use Google LevelDB library to cache solutions" OFF)
+
+include(FetchContent)
+FetchContent_Declare(openmind 
 	GIT_REPOSITORY https://github.com/ohhmm/openmind.git
 	GIT_TAG main
-	INSTALL_COMMAND ""
 	)
-include_directories(
-	${CMAKE_BINARY_DIR}/openmind-prefix/src
-	${CMAKE_BINARY_DIR}/openmind-prefix/src/openmind
-	)
-link_directories(${CMAKE_BINARY_DIR}/openmind-prefix/src/openmind-build/omnn/math)
+FetchContent_MakeAvailable(openmind)
 
-add_executable(NonLinearSystem NonLinearSystem.cpp)
-add_dependencies(NonLinearSystem openmind)
-target_link_libraries(NonLinearSystem math leveldb pthread boost_serialization)
+exe(math)

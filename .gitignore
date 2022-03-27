@@ -2,4 +2,7 @@
 /.kdev4/
 /build*
 /cmake-build-*
+CMakeSettings.json
 *.kdev4
+/.vs
+/out
