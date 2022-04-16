@@ -25,5 +25,18 @@ int main(int argc, char **argv) {
 	for(auto& solution: solutions_a)
 	    cout << '\t' << solution << endl;
 
+
+    cout << "\n\nHello Features!\n";
+    cout << "\n\nHello expressions!\n";
+    auto t = equation1.LogicAnd(equation2);
+    cout << "Expression t: " << t << endl
+        << "\nHello Multivalue expressions!\n"
+        << "Expressed a from expression t is  a = " << t(a) << endl
+        << "±1 = " << Valuable::MergeOr(1, -1) << endl
+        << "±7 = " << Valuable::MergeOr(7, -7) << endl
+        << " 8 or -7 = " << Valuable::MergeOr(8, -7) << endl
+        ;
+    
+
 	return 0;
 }
