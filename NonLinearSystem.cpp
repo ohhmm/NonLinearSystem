@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include <openmind/omnn/math/System.h>
+#include <omnn/math/System.h>
 using namespace omnn::math;
 
 auto Length(const auto& x1, const auto& y1,

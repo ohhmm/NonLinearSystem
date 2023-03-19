@@ -4,3 +4,5 @@
 /.settings
 .xcode
 .vscode
+/.vs
+/out/
