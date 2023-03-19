@@ -59,7 +59,10 @@ int main(int argc, char **argv) {
     auto pointInTrianglePredEq = PointInTriangle(0,0,x1,y1,x2,y2,x3,y3);
     auto inFormula = pointInTrianglePredEq.Equals(true);
     auto both100percent = inFormula.LogicOr(pointInTrianglePredEq.Equals(false));
-    equation = Probability.Equals(inFormula / both100percent);
+
+	// TODO: equation = Probability.Equals(inFormula.Integral() / both100percent.Integral());
+	equation = Probability.Equals(inFormula / both100percent);
+
     s << equation;
     cout << "Equation 4 (probability): " << equation << endl;
 
